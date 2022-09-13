@@ -2,22 +2,15 @@
 
 int main(void)
 {
-	char l;
+	char letter;
 
-	l = 'a';
-	while (l <= 'z')
-	{
-		putchar(l);
-		l++;
-	}
-	l = 'A';
-	while (l <= 'Z')
-	{
-		putchar(l);
-		l++;
-	}
+	for (letter = 'a'; letter <= 'z'; letter++)
+		putchar(letter);
 
-	putchar('\n);
+	for (letter = 'A'; letter <= 'Z'; letter++)
+		putchar(letter);
+
+	putchar('\n');
 
 	return (0);
 }
