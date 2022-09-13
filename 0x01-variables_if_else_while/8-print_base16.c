@@ -11,7 +11,7 @@ int main(void)
 	for (letter = 'a'; letter <= 'f'; letter++)
 		putchar(letter);
 
-	putcher('\n');
+	putchar('\n');
 
 	return  (0);
 }
