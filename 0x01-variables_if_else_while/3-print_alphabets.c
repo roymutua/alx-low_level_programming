@@ -2,13 +2,20 @@
 
 int main(void)
 {
-	char letter;
+	char l;
 
-	for (letter = 'a'; letter <= 'z'; letter++)
-		putchar(letter);
-
-	for (letter = 'A'; letter <= 'Z'; letter++)
-		putchar(letter);
+	l = 'a';
+	while (l <= 'z')
+	{
+		putchar(l);
+		l++;
+	}
+	l = 'A';
+	while (l <= 'Z')
+	{
+		putchar(l);
+		l++;
+	}
 
 	putchar('\n);
 
