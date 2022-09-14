@@ -13,6 +13,3 @@ void print_to_98(int n);
 void print_time_tables(int n);
 void print_spaces(int n);
 void print_zero(void);
-
-#ifndef MAIN_H_
-#ifndef MAIN_H_
