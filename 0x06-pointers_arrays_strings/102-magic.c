@@ -1,11 +1,5 @@
 #include <stdio.h>
-/**
- * Remember:
- * you are not allowed to use a
- * you are not allowed to modify p
- * only one statement
- * you are not allowed to code anything else than this line of code
- */
+
 int main(void)
 {
 	int n;
