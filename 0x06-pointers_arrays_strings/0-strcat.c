@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * *_strcat - concatenates @src to @dest
  * @src: the source string to append to @dest
