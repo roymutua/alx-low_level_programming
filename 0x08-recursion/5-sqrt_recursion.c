@@ -21,6 +21,12 @@ int square_root(int i, int j)
 		return (square_root(i + 1, j));
 	}
 }
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number
+ *
+ * Return: the natural square root found
+ */
 
 int _sqrt_recursion(int n)
 {
