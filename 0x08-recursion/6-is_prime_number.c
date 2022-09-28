@@ -8,7 +8,7 @@
  */
 int prime_found(int i, int j)
 {
-	if (j ! = 1)
+	if (j != 1)
 	{
 		if (i == j)
 		{
