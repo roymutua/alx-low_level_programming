@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int a, n = 0, i, t;
+	int a, n = 0, i, b;
 	int c[5] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -27,9 +27,9 @@ int main(int argc, char *argv[])
 	{
 		for (i = 0; i < 5; i++)
 		{
-			t = a / c[i];
-			a -= t * c[i];
-			n += t;
+			b = a / c[i];
+			a -= b * c[i];
+			n += b;
 			if (a == 0)
 				break;
 		}
