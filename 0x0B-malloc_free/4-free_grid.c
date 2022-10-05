@@ -3,7 +3,7 @@
 /**
  * free_grid - frees a 2 dimensional grid.
  * @grid: multidimensional array of integers.
- * height: height of the grid.
+ * @height: height of the grid.
  *
  * Return: 0
  */
