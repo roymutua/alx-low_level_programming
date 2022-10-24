@@ -3,7 +3,7 @@
  * print_list - Prints all the elements of a list_t list.
  * @h: The list_t list.
  *
- * Return: The number of nodes in h.
+ * Return: 0.
  */
 size_t print_listint(const list_t *h)
 {
@@ -14,7 +14,7 @@ size_t print_listint(const list_t *h)
 
 	while (h != NULL)
 	{
-		printf("%d\n", h->n);
+		printf("%d\n", h->b);
 		h = h->next;
 		count++;
 	}
