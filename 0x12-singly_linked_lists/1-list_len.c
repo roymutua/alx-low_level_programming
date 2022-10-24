@@ -2,19 +2,21 @@
 /**
  * list_len - Finds the number of elements
  * @h: The linked list_t list.
- * @elements: a counter var for size_t
  * 
  * Return: 0
  */
 size_t list_len(const list_t *h)
 {
-	size_t elements = 0;
+	int count = 0;
 
-	while (h)
+	if (h == NULL)
+		return (0);
+
+	while (h != NULL)
 	{
-		elements++;
+		count++;
 		h = h->next;
 	}
 
-	return (elements);
+	return (count);
 }
