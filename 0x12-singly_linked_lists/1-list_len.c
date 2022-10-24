@@ -1,7 +1,7 @@
 #include "lists.h"
 /**
  * list_len - Finds the entry points
- * @h: The linked list_t list.
+ * @h: head.
  *
  * Return: 0
  */
