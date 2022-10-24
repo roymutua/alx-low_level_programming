@@ -1,8 +1,8 @@
 #include "lists.h"
 /**
- * list_len - Finds the number of elements
+ * list_len - Finds the entry points
  * @h: The linked list_t list.
- * 
+ *
  * Return: 0
  */
 size_t list_len(const list_t *h)
