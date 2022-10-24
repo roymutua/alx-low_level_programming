@@ -5,7 +5,7 @@
  *
  * Return: 0.
  */
-size_t print_listint(const list_t *h)
+size_t print_list(const list_t *h)
 {
 	int count = 0;
 
