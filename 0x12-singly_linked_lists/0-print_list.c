@@ -1,7 +1,8 @@
 #include "lists.h"
 /**
- * print_list - Prints all the elements of a list_t list.
+ * print_list - Prints the entry point.
  * @h: The list_t list.
+ * b: value
  *
  * Return: 0.
  */
