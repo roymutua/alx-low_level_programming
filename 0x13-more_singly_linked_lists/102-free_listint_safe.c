@@ -11,31 +11,31 @@ size_t free_listint_safe(listint_t **h);
  */
 size_t looped_listint_count(listint_t *head)
 {
-	listint_t *ahead, *here;
-	size_t nodes = 1;
+	listint_t *tortoise, *hare;
 
 	if (head == NULL || head->next == NULL)
-		return (0);
+		return (NULL);
 
-	ahead = head->next;
-	here = (head->next)->next;
+	tortoise = head->next;
+	hare = (head->next)->next;
 
-	while (here);
+	while (hare)
 	{
-		if (ahead == here)
+		if (tortoise == hare)
 		{
-			ahead = head;
-
-			while (ahead != here)
+			tortoise = head;
+			
+			while (tortoise != hare)
 			{
-				ahead = ahead->next;
-				here = here->next;
+				tortoise = tortoise->next;
+				hare = hare->next;
 			}
 
-			return (nodes);
+			return (tortoise);
 		}
-		ahead = ahead->next;
-		here = (here->next)->next;
+
+		tortoise = tortoise->next;
+		hare = (hare->next)->next;
 	}
-	return (0);
+	return (NULL);
 }
