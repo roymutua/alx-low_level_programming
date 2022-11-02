@@ -2,7 +2,7 @@
 #define main_h
 
 /**
- *  Desc: Header file containing prototypes for all functions written in the 0x15-File I/O directory.
+ * Desc: Header file containing prototypes for all functions written in the 0x15 C - File I/O directory.
  */
 
 #include <sys/types.h>
