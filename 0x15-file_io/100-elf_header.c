@@ -12,11 +12,9 @@
  *
  * Return: none.
  */
-
 void closes_file(int fil)
 {
 	if (close(fil) == -1)
-
 	{
 		dprintf(STDERR_FILENO, "Error: Cannot close fd %d\n", fil);
 	exit(98);
@@ -29,7 +27,6 @@ void closes_file(int fil)
  *
  * Return: none.
  */
-
 void check_file(unsigned char *rem)
 {
 	int i;
@@ -47,13 +44,11 @@ void check_file(unsigned char *rem)
  *
  * Return: none.
  */
-
 void print_magic(unsigned char *magic)
 {
 	int i;
 	
 	printf("ELF Header:\n");
-
 	printf("  Magic:   ");
 
 	for (i = 0; i < EI_NIDENT; i++)
@@ -70,7 +65,6 @@ void print_magic(unsigned char *magic)
  *
  * Return: none.
  */
-
 void print_class(unsigned char *class)
 {
 	printf("  Class:                             ");
@@ -80,15 +74,12 @@ void print_class(unsigned char *class)
 		case ELFCLASSNONE:
 			printf("none\n");
 			break;
-
 		case ELFCLASS32:
 			printf("ELF32\n");
 			break;
-
 		case ELFCLASS64:
 			printf("ELF64\n");
 			break;
-
 		default:
 			printf("<unknown: %x>\n", class[EI_CLASS]);
 	}
@@ -100,7 +91,6 @@ void print_class(unsigned char *class)
  *
  * Return: none.
  */
-
 void print_data(unsigned char *data)
 {
 	printf("  Data:                              ");
@@ -110,15 +100,12 @@ void print_data(unsigned char *data)
 		case ELFDATANONE:
 			printf("none\n");
 			break;
-
 		case ELFDATA2LSB:
 			printf("2's complement, little endian\n");
 			break;
-
 		case ELFDATA2MSB:
 			printf("2's complement, big endian\n");
 			break;
-
 		default:
 			printf("<unknown: %x>\n", data[EI_CLASS]);
 	}
@@ -130,7 +117,6 @@ void print_data(unsigned char *data)
  *
  * Return: none.
  */
-
 void print_version(unsigned char *version)
 {
 	printf("  Version:                           %d",
@@ -141,7 +127,6 @@ void print_version(unsigned char *version)
 		case EV_CURRENT:
 			printf(" (current)\n");
 			break;
-
 		default:
 			printf("\n");
 			break;
@@ -154,7 +139,6 @@ void print_version(unsigned char *version)
  *
  * Return: none.
  */
-
 void print_os_abi(unsigned char *o_a)
 {
 	printf("  OS/ABI:                            ");
@@ -164,39 +148,30 @@ void print_os_abi(unsigned char *o_a)
 		case ELFOSABI_NONE:
 			printf("UNIX - System V\n");
 			break;
-
 		case ELFOSABI_HPUX:
 			printf("UNIX - HP-UX\n");
 			break;
-
 		case ELFOSABI_NETBSD:
 			printf("UNIX - NetBSD\n");
 			break;
-
 		case ELFOSABI_SOLARIS:
 			printf("UNIX - Solaris\n");
 			break;
-
 		case ELFOSABI_IRIX:
 			printf("UNIX - IRIX\n");
 			break;
-
 		case ELFOSABI_FREEBSD:
 			printf("UNIX - FreeBSD\n");
 			break;
-
 		case ELFOSABI_TRU64:
 			printf("UNIX - TRU64\n");
 			break;
-
 		case ELFOSABI_ARM:
 			printf("ARM\n");
 			break;
-
 		case ELFOSABI_STANDALONE:
 			printf("Standalone App\n");
 			break;
-
 		default:
 			printf("<unknown: %x>\n", o_a[EI_OSABI]);
 	}
@@ -208,7 +183,6 @@ void print_os_abi(unsigned char *o_a)
  *
  * Return: none.
  */
-
 void print_abi(unsigned char *abi)
 {
 	printf("  ABI Version:                       %d\n",
@@ -235,23 +209,18 @@ void print_type(unsigned int type, unsigned char *class)
 		case ET_NONE:
 			printf("NONE (None)\n");
 			break;
-
 		case ET_REL:
 			printf("REL (Relocatable file)\n");
 			break;
-
 		case ET_EXEC:
 			printf("EXEC (Executable file)\n");
 			break;
-
 		case ET_DYN:
 			printf("DYN (Shared object file)\n");
 			break;
-
 		case ET_CORE:
 			printf("CORE (Core file)\n");
 			break;
-
 		default:
 			printf("<unknown: %x>\n", type);
 	}
@@ -264,7 +233,6 @@ void print_type(unsigned int type, unsigned char *class)
  *
  * Return: none.
  */
-
 void print_entry(unsigned long int entry, unsigned char *class)
 {
 	printf("  Entry point address:               ");
@@ -291,11 +259,9 @@ void print_entry(unsigned long int entry, unsigned char *class)
  *
  * Return: 0 on success.
  */
-
 int main(int ac, char **av)
 {
 	Elf64_Ehdr *header;
-
 	int openn, readd;
 	
 	if (ac != 2 || av[1] == NULL)
@@ -303,23 +269,19 @@ int main(int ac, char **av)
 				av[0]), exit(98);
 
 	openn = open(av[1], O_RDONLY);
-
 	if (openn == -1)
 		dprintf(STDERR_FILENO, "Error: Cannot read file %s\n",
 				av[1]), exit(98);
 
 	header = malloc(sizeof(Elf64_Ehdr));
-
 	if (!header)
 	{
 		dprintf(STDERR_FILENO, "Error: No memory allocated for %s\n",
 				av[1]);
-
 		closes_file(openn), exit(98);
 	}
 
 	readd = read(openn, header, sizeof(Elf64_Ehdr));
-
 	if (readd == -1)
 	{
 		printf("Error: Cannot read file %s\n", av[1]);
