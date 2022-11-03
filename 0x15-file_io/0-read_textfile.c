@@ -14,11 +14,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *buffer;
 
 	buffer = malloc(sizeof(*buffer) * (letters + 1));
+
 	if (filename == NULL || buffer == NULL)
 	{
 		free(buffer);
+
 		return (0);
 	}
+
 	a = open(filename, O_RDONLY);
 	if (a == -1)
 		return (0);
@@ -28,11 +31,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	buffer[b] = '\0';
+
 	c = write(STDOUT_FILENO, buffer, b);
 	if (c != b)
 		return (0);
 	
 	free(buffer);
+
 	close(a);
+
 	return (b);
 }
